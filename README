@@ -1,0 +1,69 @@
+#  UniLibSys – University Library Database System
+
+##  Project Title
+UniLibSys – A Structured Relational Database for University Library Management
+
+##  Description
+**UniLibSys** is a MySQL-based database project that models a university library system. It provides a well-structured relational database to manage books, authors, categories, student members, and borrowing activity efficiently. The schema is normalized up to 3NF and includes proper constraints and relationships.
+
+This project is ideal for learning or demonstrating SQL database design with real-world relevance.
+
+
+##  How to Run / Set Up the Project
+
+1. **Install MySQL** (if not already installed):
+   - [Download MySQL](https://dev.mysql.com/downloads/)
+
+2. **Import the SQL File**:
+   - Open MySQL Workbench or your preferred SQL client
+   - Run the included SQL file:  
+     📄 `library_management.sql`
+
+3. The script will:
+   - Create the `UniversityLibrary` database
+   - Create all required tables with appropriate constraints
+   - Set up foreign key relationships
+
+
+
+##  Tables and Relationships
+
+| Table         | Description                          |
+|---------------|--------------------------------------|
+| `Students`    | University students borrowing books  |
+| `Authors`     | Book authors                         |
+| `Categories`  | Book classification (genres)         |
+| `Books`       | Book records with inventory data     |
+| `BookAuthors` | M-M linking between books & authors  |
+| `Loans`       | Tracks borrow/return transactions    |
+
+###  Relationships
+
+- **1:M**: `Categories` → `Books`
+- **M:M**: `Books` ↔ `Authors` (via `BookAuthors`)
+- **1:M**: `Students` → `Loans`
+- **1:M**: `Books` → `Loans`
+
+
+
+##  ERD (Entity Relationship Diagram)
+
+You can visualize the database structure with this ERD:
+
+![ERD Diagram](https://i.imgur.com/DV3IEjJ.png)  
+*(Replace with your own ERD if needed)*
+
+Suggested tools to create/edit your own:
+- [dbdiagram.io](https://dbdiagram.io/)
+- [draw.io](https://draw.io/)
+- [QuickDBD](https://www.quickdatabasediagrams.com/)
+
+
+
+##  File Included
+
+- `library_management.sql`: SQL script to set up the entire database
+
+
+##  License
+This project is open-source and free to use for educational or academic purposes.
